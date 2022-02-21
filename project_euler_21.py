@@ -29,7 +29,7 @@ def sum_proper_divisors(n: int) -> int:
 
 	for i in range(2, round((n**0.5)) + 1):
 		if n % i == 0:
-			sum_divisors += (i + int(n / i))
+			sum_divisors += (i + int(n / i)) if (i != int(n / i)) else (i)
 	
 	return sum_divisors 
 
@@ -52,6 +52,7 @@ def sieve(n: int) -> list[bool]:
                 k += i
         i += 1
     return sieve
+    
 
 
 print(main())
